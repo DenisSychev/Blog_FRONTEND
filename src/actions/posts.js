@@ -8,7 +8,7 @@ export const loadFailed = createAction('[Posts] Load fail');
 //отправляет данные на сервер (побочный эффект)
 export const loadPosts = (dispatch, pageNumber) => {
     dispatch(loadStarted());
-    fetch(`http://jsonplaceholder.typicode.com/posts?_limit=3&_page=${pageNumber}`) //https://localhost:5001/api/publication
+    fetch(`http://localhost:41313/api/publication`) //http://jsonplaceholder.typicode.com/posts?_limit=3&_page=${pageNumber}
         .then((response) => response.json())
         .then((posts) => {
             dispatch(loadCompleted(posts));

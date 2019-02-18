@@ -1,15 +1,15 @@
-import React, {PureComponent, Fragment} from 'react';
-import {connect} from 'react-redux';
+import React, { PureComponent, Fragment } from 'react';
+import { connect } from 'react-redux';
 
 import User from 'components/User';
 
 class UserContainer extends PureComponent {
     render() {
-        const {user} = this.props;
+        const { user } = this.props;
         return (
             <Fragment>
-                <div className = "content container">
-                    <User user={user} />
+                <div className="content container">
+                    <User user={ user } />
                 </div>
             </Fragment>
         );
@@ -18,6 +18,6 @@ class UserContainer extends PureComponent {
 
 export default connect(
     (state, props) => ({
-        user: state.users.people.find((user) => user.id === +props.match.params.id)
+        user: state.users.authors.find((user) => user.id === +props.match.params.id)
     })
 )(UserContainer);

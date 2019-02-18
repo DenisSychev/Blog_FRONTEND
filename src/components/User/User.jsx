@@ -5,7 +5,7 @@ export default class User extends PureComponent {
         const {user} = this.props;
         return (
             <div>
-                {user.name} ({user.username})
+                <h3>{user.firstName}, {user.lastName}</h3>
                 <a href={`mailto:${user.email}`}>Написать и отправить электропочту</a>
             </div>
         );
